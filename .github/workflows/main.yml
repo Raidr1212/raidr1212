@@ -12,6 +12,7 @@ jobs:
       - name: Classic     
         uses: lowlighter/metrics@latest
         with:
+        filename: github-metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
       - name: Snippet
         uses: lowlighter/metrics@latest
@@ -33,4 +34,4 @@ jobs:
           plugin_habits_facts: yes      # Display facts section
           plugin_habits_charts: yes     # Display charts section
           plugin_habits_trim: yes       # Trim unused hours on daily chart
-          config_timezone: Europe/Paris # Set timezone
+          config_timezone: Europe/Istanbul # Set timezone
