@@ -16,7 +16,21 @@ jobs:
       - name: Snippet
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.code.svg
+          filename: snippet.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
           plugin_code: yes
+          plugin_code_lines: 12               # Only display snippets with less than 12 lines
+          plugin_code_load: 100               # Fetch 100 events from activity
+          plugin_code_visibility: public      # Only display snippets from public activity
+      - name: Habits
+        uses: lowlighter/metrics@latest
+        with:
+          filename: habits.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          plugin_habits: yes
+          plugin_habits_from: 200       # Use 200 events to compute habits
+          plugin_habits_days: 14        # Keep only events from last 14 days
+          plugin_habits_facts: yes      # Display facts section
+          plugin_habits_charts: yes     # Display charts section
+          plugin_habits_trim: yes       # Trim unused hours on daily chart
+          config_timezone: Europe/Paris # Set timezone
